@@ -20,21 +20,25 @@ public class CalculatorController {
     }
 
     @GetMapping(path = "/plus")// аннотация для получения запросов типа Get
-    public String sum(@RequestParam int num1, @RequestParam int num2) {//вызов метода сложения
+    public String sum(@RequestParam Integer num1, @RequestParam Integer num2) {//вызов метода сложения
         return calculatorService.sum(num1, num2);
     }
 
     @GetMapping(path = "/minus")// аннотация для получения запросов типа Get
-    public String minus(@RequestParam int num1, @RequestParam int num2) {//вызов метода вычитания
+    public String minus(@RequestParam Integer num1, @RequestParam Integer num2) {//вызов метода вычитания
         return calculatorService.minus(num1, num2);
     }
 
     @GetMapping(path = "/multiply")// аннотация для получения запросов типа Get
-    public String multiply(@RequestParam int num1, @RequestParam int num2) {//вызов метода умножения
+    public String multiply(@RequestParam Integer num1, @RequestParam Integer num2) {//вызов метода умножения
         return calculatorService.multiply(num1, num2);
     }
     @GetMapping(path = "/divide")// аннотация для получения запросов типа Get
-    public String divide(@RequestParam int num1, @RequestParam int num2) {//вызов метода деления
-        return calculatorService.divide(num1, num2);
+    public String divide(@RequestParam Integer num1, @RequestParam Integer num2) {//вызов метода деления
+        if (num2 == 0) {
+            return "На ноль делить нельзя!";
+        } else {
+            return calculatorService.divide(num1, num2);
+        }
     }
 }

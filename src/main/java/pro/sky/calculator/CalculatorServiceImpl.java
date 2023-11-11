@@ -10,20 +10,20 @@ public class CalculatorServiceImpl implements CalculatorService {
         return "Добро пожаловать в калькулятор!";
     }
     @Override
-    public String sum(int num1, int num2) {//реализация (переопределение) метода сложения
+    public String sum(Integer num1, Integer num2) {//реализация (переопределение) метода сложения
         return num1 + " + " + num2 + " = " + (num1 + num2);
     }
 
     @Override
-    public String minus(int num1, int num2) {//реализация (переопределение) метода вычитания
+    public String minus(Integer num1, Integer num2) {//реализация (переопределение) метода вычитания
         return num1 + " - " + num2 + " = " + (num1 - num2);
     }
     @Override
-    public String multiply(int num1, int num2) {//реализация (переопределение) метода умножения
+    public String multiply(Integer num1, Integer num2) {//реализация (переопределение) метода умножения
         return num1 + " * " + num2 + " = " + (num1 * num2);
     }
     @Override
-    public String divide(int num1, int num2) {//реализация (переопределение) метода деления
+    public String divide(Integer num1, Integer num2) {//реализация (переопределение) метода деления
         return num1 + " / " + num2 + " = " + (num1 / num2);
     }
 }
